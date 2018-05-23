@@ -1,4 +1,4 @@
-# ÔËÐÐ»·¾³linux run Myexe, libprotobuf.so.9ÕÒ²»µ½
+# è¿è¡ŒçŽ¯å¢ƒlinux run Myexe, libprotobuf.so.9æ‰¾ä¸åˆ°
 ```
 root@a:~/om >./Myexe &
 root@a:~/om >./Myexe: error while loading shared libraries: libprotobuf.so.9: cannot open shared object file: No such file or directory
@@ -13,44 +13,44 @@ lrwxrwxrwx  1 root root       25 Apr  5  2018 libprotobuf-lite.so.9 -> libprotob
 ```
 result: no this lib, `libprotobuf-lite.so.9.0.1` is total different with `libprotobuf.so.9`
 
-2. ²é¿´±àÒë»·¾³, Myexe´úÂëµÄmakefile£¬ÕÒµ½ÔÚÄÄÀïlinkµÄ
-ÕÒµ½Íâ²¿½á¹ûµÄmk£¬PIAÒ»°ã¶¼ÊÇºÍÍâ²¿Ä£¿éµÄ½Ó¿Ú£¬¸Õ²ÅÓÃµ½µÄÊÇPIAÀïÃæµÄBMAÄ£¿é
+2. æŸ¥çœ‹ç¼–è¯‘çŽ¯å¢ƒ, Myexeä»£ç çš„makefileï¼Œæ‰¾åˆ°åœ¨å“ªé‡Œlinkçš„
+æ‰¾åˆ°å¤–éƒ¨ç»“æžœçš„mkï¼ŒPIAä¸€èˆ¬éƒ½æ˜¯å’Œå¤–éƒ¨æ¨¡å—çš„æŽ¥å£ï¼Œåˆšæ‰ç”¨åˆ°çš„æ˜¯PIAé‡Œé¢çš„BMYæ¨¡å—
 ```
 Make]$ cat  /var/fwork/xying/project/Application/OM/PIA/Make/BMYexe.mk
 else ifeq ($(ARCH),arm_nrt)
 EXTRA_LDFLAGS += -lprotobuf -lCCS -ldl -lpthread
 ```
-ÕâÀïÈ·¶¨ÓÃµÄÊÇprotobuf£¬¶ø²»ÊÇprotobuf-lite£¬ÔÚÕâÀïÓÐÒ»¸ö¶ÔÍâ¿âÒÀÀµ£¬»áÁ¬½ÓÕâ¸ö¿â¡£
+è¿™é‡Œç¡®å®šç”¨çš„æ˜¯protobufï¼Œè€Œä¸æ˜¯protobuf-liteï¼Œåœ¨è¿™é‡Œæœ‰ä¸€ä¸ªå¯¹å¤–åº“ä¾èµ–ï¼Œä¼šè¿žæŽ¥è¿™ä¸ªåº“ã€‚
 
-3. ²é¿´±àÒë»·¾³ÉÏ£¬Õâ¸ö¿âlibprotobuf.so.9 ÊÇÈçºÎlinkµÄ£¬ÔÚÄÄÀï
-¼ÈÈ»´úÂëÄÜ¹»±àÒë³É¹¦£¬ÄÇÒâÎ¶×Å±àÒë»·¾³ÉÏÒ»¶¨ÓÐÕâ¸ö¿â£¬¶øÇÒÊÇÅäÌ×µÄ.
-(1)ÕÒ±àÒë»·¾³ÉÏµÄ¿â
-»·¾³find£¬½á¹ûÖ»ÕÒµ½libprotobuf.so.7.0.0£¬³¢ÊÔÆ¥Åäfile
+3. æŸ¥çœ‹ç¼–è¯‘çŽ¯å¢ƒä¸Šï¼Œè¿™ä¸ªåº“libprotobuf.so.9 æ˜¯å¦‚ä½•linkçš„ï¼Œåœ¨å“ªé‡Œ
+æ—¢ç„¶ä»£ç èƒ½å¤Ÿç¼–è¯‘æˆåŠŸï¼Œé‚£æ„å‘³ç€ç¼–è¯‘çŽ¯å¢ƒä¸Šä¸€å®šæœ‰è¿™ä¸ªåº“ï¼Œè€Œä¸”æ˜¯é…å¥—çš„.
+(1)æ‰¾ç¼–è¯‘çŽ¯å¢ƒä¸Šçš„åº“
+çŽ¯å¢ƒfindï¼Œç»“æžœåªæ‰¾åˆ°libprotobuf.so.7.0.0ï¼Œå°è¯•åŒ¹é…file
 ```
 ]$ find / > /tmp/xxxxx
 ]$ cd /linux_builds/ipalightsdkroot/FZC/SAPI/R_FPT_165.7.1.13/data/SS_Protobuf/build/protobuf_target/lib
 ```
-±È½ÏMYexeºÍlib¿âÎÄ¼þµÄ fileÄÚÈÝ£¬Á½Õß²»Ïà¸É£¬¿´ÆðÀ´²»ÊÇÕâ¸öÎÄ¼þ£¬²»·ûºÏ¡£
+æ¯”è¾ƒMYexeå’Œlibåº“æ–‡ä»¶çš„ fileå†…å®¹ï¼Œä¸¤è€…ä¸ç›¸å¹²ï¼Œçœ‹èµ·æ¥ä¸æ˜¯è¿™ä¸ªæ–‡ä»¶ï¼Œä¸ç¬¦åˆã€‚
 ```
 lib]$ file libprotobuf.so.7.0.0 
 libprotobuf.so.7.0.0: ELF 64-bit MSB shared object, MIPS, MIPS64 rel2 version 1 (SYSV), dynamically linked, with unknown capability 0x410000000f676e75 = 0x1000000070403, not stripped
 lib]$ file /var/fwork/xying/project/exec/arm_nrt/release/Myexe 
 /var/fpwork/xying001/trunk/lteDo/exec/arm_cortexa15_nrt/release/Myexe: ELF 32-bit LSB executable, ARM, version 1 (GNU/Linux), dynamically linked (uses shared libs), for GNU/Linux 4.4.0, stripped
 ```
-ÔÙ¿´lib¿âµÄÄÚÈÝ£¬¿ÉÒÔÕÒµ½£¬µ«ÊÇ°æ±¾Ãû²»Ò»Ñù
+å†çœ‹libåº“çš„å†…å®¹ï¼Œå¯ä»¥æ‰¾åˆ°ï¼Œä½†æ˜¯ç‰ˆæœ¬åä¸ä¸€æ ·
 ```
 lib]$ nm libprotobuf.so.7.0.0 | grep "ZN6google8protobuf15FieldDescriptor17"
 00000000000e5f58 R _ZN6google8protobuf15FieldDescriptor17kTypeToCppTypeMapE
 ```
-±àÒë»·¾³ÉÏ£¬Ô­ÓÐµÄlinuxÉÏµÄ²»ÄÜÓÃ, Ò²Ã»ÓÐtools-chain, »ù±¾È·¶¨Õâ¸ö»·¾³µÄÓÃµÄÊÇË½½¨µÄtools-chain
+ç¼–è¯‘çŽ¯å¢ƒä¸Šï¼ŒåŽŸæœ‰çš„linuxä¸Šçš„ä¸èƒ½ç”¨, ä¹Ÿæ²¡æœ‰tools-chain, åŸºæœ¬ç¡®å®šè¿™ä¸ªçŽ¯å¢ƒçš„ç”¨çš„æ˜¯ç§å»ºçš„tools-chain
 
-(2) ÄÇÕÒgcc°É£¬±àÒë³É¹¦£¬Õâ¸öÀïÃæ¶ÔÓ¦µÄlib¿âÓ¦¸ÃÓÐÕâ¸ö¿â
-Step1£ºÕÒmakefile,Ëæ±ãÒ»¸ömk¶¼¿ÉÒÔ¡£ÒÑ¾­·â×°ÁË, Ã»ÓÐgccÂ·¾¶
+(2) é‚£æ‰¾gccå§ï¼Œç¼–è¯‘æˆåŠŸï¼Œè¿™ä¸ªé‡Œé¢å¯¹åº”çš„libåº“åº”è¯¥æœ‰è¿™ä¸ªåº“
+Step1ï¼šæ‰¾makefile,éšä¾¿ä¸€ä¸ªmkéƒ½å¯ä»¥ã€‚å·²ç»å°è£…äº†, æ²¡æœ‰gccè·¯å¾„
 `$(Q)$(MAKE) $(build)=Application/.../ makefile=ProtoGen.mk`
 
-Step2£º²é¿´ÉÏ´Î±àÒë½á¹û£¬ÏêÏ¸µÄlog£¬¹Ø¼ü´Êgcc£¬ÕÒµ½ÈçÏÂÄÚÈÝ
+Step2ï¼šæŸ¥çœ‹ä¸Šæ¬¡ç¼–è¯‘ç»“æžœï¼Œè¯¦ç»†çš„logï¼Œå…³é”®è¯gccï¼Œæ‰¾åˆ°å¦‚ä¸‹å†…å®¹
 ```
-/build/.../os/archs/arm-linux-gnueabihf/bld-tools/x86_64-pc-linux-gnu/bin/arm-linux-gnueabihf-gcc -o¡­¡­
+/build/.../os/archs/arm-linux-gnueabihf/bld-tools/x86_64-pc-linux-gnu/bin/arm-linux-gnueabihf-gcc -oâ€¦â€¦
 ]$ cd /build/.../os/archs/arm-linux-gnueabihf/
 arm-linux-gnueabihf]$ ll
 total 0
@@ -61,18 +61,18 @@ arm-cortexa15-linux-gnueabihf]$ cd sys-root/lib
 lib]$ file libprotobuf.so.9.0.1
 libprotobuf.so.9.0.1: ELF 32-bit LSB shared object, ARM, version 1 (SYSV), dynamically linked, stripped
 ```
-Õâ¸ö¿´ÆðÀ´ºÜ·ûºÏ£¬armµÄ32bitµÄ£¬ºÍ±àÒë³öÀ´µÄMYexeÒ»ÖÂ, OK
+è¿™ä¸ªçœ‹èµ·æ¥å¾ˆç¬¦åˆï¼Œarmçš„32bitçš„ï¼Œå’Œç¼–è¯‘å‡ºæ¥çš„MYexeä¸€è‡´, OK
 `lib]$ cp libprotobuf.so.9.0.1 /home/xying/`
 
-Step3: ½«Õâ¸ö¿âlibprotobuf.so.9.0.1Åªµ½ÔËÐÐ»·¾³ÉÏµÄ, ²¢linkÉÏ, ÒòÎªË½°ü, ËùÒÔÒª°Ñ×Ô¼ºÒÀÀµlib export½øÀ´£¬OK
+Step3: å°†è¿™ä¸ªåº“libprotobuf.so.9.0.1å¼„åˆ°è¿è¡ŒçŽ¯å¢ƒä¸Šçš„, å¹¶linkä¸Š, å› ä¸ºç§åŒ…, æ‰€ä»¥è¦æŠŠè‡ªå·±ä¾èµ–lib exportè¿›æ¥ï¼ŒOK
 ```
-root@a:~/om >cp libprotobuf.so.9.0.1 /usr/lib/
-root@a:~/om >ln -s /usr/lib/libprotobuf.so.9.0.1 /usr/lib/libprotobuf.so.9
+root@a:~/om >ln -s /../libprotobuf.so.9.0.1 /../libprotobuf.so.9
 root@a:~/om >export LD_LIBRARY_PATH=/user/toor4n/om
 root@a:~/om >./MYexe &
 [1] 4864
 root@a:~/om >2018-02-23T12:21:16.791Z ::APPS_START :OM Interface is ready
 ```
 
-4. ³¢ÊÔÖØÐÂ±àÒë¸öÕâ¸ö¿âlibprotobuf.so.9
-»·¾³ÉÏÓÐgcc£¬ºÍprotobufÔ´Âë£¬³¢ÊÔ½»²æ±àÒë³öÕâ¸ö¿â
+4. å°è¯•é‡æ–°ç¼–è¯‘ä¸ªè¿™ä¸ªåº“libprotobuf.so.9
+çŽ¯å¢ƒä¸Šæœ‰gccï¼Œå’Œprotobufæºç ï¼Œå°è¯•äº¤å‰ç¼–è¯‘å‡ºè¿™ä¸ªåº“.
+è¿™ä¸ªæ˜¯å®žåœ¨ä¸è¡Œçš„ä¸‹ç­–äº†ï¼Œå¹³å¸¸çš„é¡¹ç›®ä¸­åº”è¯¥æœ‰ç»Ÿä¸€ç®¡ç†èµ„æºçš„ï¼Œä¼šç»Ÿä¸€configè¿™äº›dependence.
